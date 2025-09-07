@@ -1,0 +1,208 @@
+<!-- Admin/edit-user.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+
+    <script src="https://kit.fontawesome.com/fcdfbe2133.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/Global.css">
+    <link rel="stylesheet" href="../css/main.css">
+    
+    <title>Edit User</title>
+</head>
+<body>
+    
+</head>
+<body>
+   
+    <header>
+        <nav>
+            <div id="menuIcon">
+                <div class="logo">
+                    <img src="../Assets/AMS_logo.png" alt="Logo">
+                </div>
+                <h1>AMS</h1> 
+            </div>
+            <div id="userOpen">
+                <div class="windowNav">
+                    <ul>
+                        <a href="./analysis.html"><span class="material-symbols-outlined">home</span></a>
+                        <a href="../Admin/attendance.html"><span class="material-symbols-outlined">assignment</span></a>
+                        <a href="./registration.html"><span class="material-symbols-outlined">person_add</span></a>
+                        <a href="./user-list.html"><span class="material-symbols-outlined">pageview</span></a>
+                        <a href="../Admin/analysis.html"><span class="material-symbols-outlined">bar_chart_4_bars</span></a>
+                        <a href="#"><span class="material-symbols-outlined">settings</span></a>
+                    </ul>
+                </div>
+                <span class="menu material-symbols-outlined">menu</span>
+                <!-- <a href="#"><span class="notifications material-symbols-outlined">notifications</span></a> -->
+                <a href="#" id="themeToggle" class="dark"><span class="material-symbols-outlined">dark_mode</span></a>
+                <a href="#" aria-placeholder="user">
+                    <div class="userProfile">
+                        <img src="../Assets/AKASH00.jpg" alt="Profile" onclick="toggleMenu()">
+                        <div class="userMenu" id="profileMenu">
+                            <a href="./profile.html" class="goProfileLink"><span class="material-symbols-outlined">account_circle</span>View Profile</a>
+                            <a href="/settings"><span class="material-symbols-outlined">settings</span>Settings</a>
+                            <a href="/logout" class="logout-btn"><span class="material-symbols-outlined">logout</span>Logout</a>
+                        </div>
+                    </div>
+                </a>
+                
+            </div>
+        </nav>
+    </header>
+    <div id="navbar">
+        <h4>Dashboard</h4>
+        <span class="close material-symbols-outlined">close</span>
+        <ul>
+            <li><a href="./profile.html"><span class="material-symbols-outlined">dashboard</span><span>Dashboard</span></a></li>
+            <li><a href="./user-list.html"><span class="material-symbols-outlined">pageview</span><span>View Students</span></a></li>
+            <li><a href="./registration.html"><span class="material-symbols-outlined">person_add</span><span>Add Student</span></a></li>
+            <li><a href="#"><span class="material-symbols-outlined">bar_chart_4_bars</span><span>Analytics</span></a></li>
+            <li><a href="#"><span class="material-symbols-outlined">settings</span><span>Settings</span></a></li>
+            <li><a href="#" id="themeToggle" class="dark"><span class="material-symbols-outlined">dark_mode</span><span>Dark/Light</span></a></li>
+            <li>  <a href="/logout" class="logout-btn"><span class="material-symbols-outlined">logout</span>Logout</a></li>
+        </ul>
+    </div>  
+
+
+    <div class="edit-container">
+        <h2>Edit Personal & Academic Details</h2>
+        <form action="/submit-details" method="post" enctype="multipart/form-data">
+            <div>
+
+                <fieldset>
+                    <legend>Personal Information</legend>
+                    <label for="username">Name:</label>
+                <input type="text" id="username" name="name" value="" ><br>
+
+                <label for="photo">Photo:</label>
+                <input type="file" id="photo" name="photo" accept="image/*"><br>
+
+                <label for="fathername">Father's Name:</label>
+                <input type="text" id="fathername" name="fathername" value="Richard Roe" ><br>
+
+                <label for="address">Address:</label>
+                <textarea id="address" name="address" rows="4" cols="50" value="123 Main St, Anytown, Delhi" ></textarea><br>
+
+                <label for="course">Course:</label>
+                <input type="text" id="course" name="course" value="Computer Science" ><br>
+
+                <label for="mobile">Mobile No.:</label>
+                <input type="tel" id="mobile" name="mobile" pattern="[0-9]{10}" value="1234567890" ><br>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" value="john.doe@example.com" ><br>
+            </fieldset>
+        </div>
+        <div>
+
+            <fieldset>
+                <legend>Academic Details</legend>
+                <label for="rollno">Roll No.:</label>
+                <input type="text" id="rollno" name="rollno" value="CS12345"><br>
+                
+                <label for="std_id">Student ID:</label>
+                <input type="text" id="std_id" name="student id" value="22454756566"><br>
+                
+                <label for="year">Year:</label>
+                <input type="text" id="year" name="year" value="3rd Year"><br>
+                
+                <label for="department">Department:</label>
+                <input type="text" id="department" name="department" value="Computer Science"><br>
+                
+                <label for="cgpa">CGPA:</label>
+                <input type="text" id="cgpa" name="cgpa" value="8.5"><br>
+
+                <label for="10th">10th marks:</label>
+                <input type="text" id="10th" name="10th" value="6.5" ><br>
+
+                <label for="12th">12th:</label>
+                <input type="text" id="12th" name="12th" value="7.5" ><br>
+            </fieldset>
+        </div>
+            
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>About Us</h4>
+                <p>Learn more about our company and mission.</p>
+                <p>Developed by<Span> Akash Gupta</Span></p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a>
+                <a href="https://www.twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/in/akash-gupta-718363296/" target="_blank"><i class="fa fa-linkedin"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© Nov 2024 Your Company. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+
+
+
+    <script src="../script/global.js"></script>
+    <script>
+        
+async function loadStudentDetails() {
+    try {
+        const urlParams = new URLSearchParams(window.location.search);
+        const username = urlParams.get("username");
+        const studentId = urlParams.get("Vid");
+
+        if (!username || !studentId) {
+            throw new Error("❌ Missing URL parameters");
+        }
+
+        const response = await fetch(`http://localhost:3000/profile?username=${encodeURIComponent(username)}&Vid=${encodeURIComponent(studentId)}`);
+        const data = await response.json();
+
+        if (!response.ok) {
+            throw new Error(data.error || "Error fetching data");
+        }
+
+        document.getElementById("username").value = data.name || "";
+        document.getElementById("fathername").value = data.fathername || "";
+        document.getElementById("address").value = data.address || "";
+        document.getElementById("course").value = data.course || "";
+        document.getElementById("mobile").value = data.mobile || "";
+        document.getElementById("email").value = data.email || "";
+        document.getElementById("rollno").value = data.rollno || "";
+        document.getElementById("std_id").value = data.student_id || "";
+        document.getElementById("year").value = data.year || "";
+        document.getElementById("department").value = data.department || "";
+        document.getElementById("cgpa").value = data.cgpa || "";
+        document.getElementById("10th").value = data.marks10 || "";
+        document.getElementById("12th").value = data.marks12 || "";
+    } catch (error) {
+        console.error("Error loading student details:", error);
+    }
+}
+
+document.addEventListener("DOMContentLoaded", loadStudentDetails);
+
+
+</script>
+
+
+</body>
+</html>

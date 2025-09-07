@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/main.css">
+        <link rel="stylesheet" href="../css/Global.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"/>
+        <title>Login Page</title>
+        
+    </head>
+    <body>
+        <div id="loginContainer">
+            <div id="notification-container"></div>
+            
+        
+        <div class="container">
+            <div class="logo">
+            <img src="../Assets/AMS_logo.png" alt="Logo"> 
+        </div>
+        <form id="loginForm"  action="/signin"  method="post">
+            <h2>Login</h2>
+            <div class="input-group">
+                <select id="userType" required>
+                    <option value="" disabled selected>Select User Type</option>
+                    <option value="student">Student</option>
+                    <option value="teacher">Teacher</option>
+                    <option value="admin">Admin</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="username"></label>
+                <input type="text" id="username" placeholder="Username" autocomplete="username">
+                <p class="nameError"></p>
+            </div>
+            <div class="input-group">
+                <label for="password"></label>
+                <input type="password" id="password" placeholder="Password">
+                <p class="pswdError"></p>
+            </div>
+            <div class="input-group">
+                <label for="captcha"></label>
+                <span id="captchaCode"></span>
+                <!-- <button type="button" id="refreshCaptcha">Refresh Captcha</button> -->
+                <span class="refreshCaptcha material-symbols-outlined">refresh</span>
+                <input type="text" id="captcha" placeholder="Enter Captcha">
+            </div>
+            <button type="submit">Login</button>
+            <P class="about">By signing up, you agree to our Terms , Privacy Policy and Cookies Policy .</P>
+            <p onclick="forForget()" id="forForget">If you forget click here? <a href="#">Forget Password</a></p>
+        </form>
+    </div>
+</div>
+
+<script src="../script/global.js"></script>
+<script src="../script/signin.js"></script>
+</body>
+</html>

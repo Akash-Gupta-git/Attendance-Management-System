@@ -1,0 +1,123 @@
+
+<!-- Admin/attendance.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <script src="https://kit.fontawesome.com/fcdfbe2133.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/Global.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <title>Student Attendance</title>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div id="menuIcon">
+                <div class="logo">
+                    <img src="/Public/Assets/AMS_logo.png" alt="Logo">
+                </div>
+                <h1>AMS</h1> 
+            </div>
+            <div id="userOpen">
+                <div class="windowNav">
+                    <ul class="admin-only">
+                        <a href="./analysis.html"><span class="material-symbols-outlined">home</span></a>
+                        <a href="../Admin/attendance.html"><span class="material-symbols-outlined">assignment</span></a>
+                        <a href="./registration.html"><span class="material-symbols-outlined">person_add</span></a>
+                        <a href="./user-list.html"><span class="material-symbols-outlined">pageview</span></a>
+                        <a href="../Admin/analysis.html"><span class="material-symbols-outlined">bar_chart_4_bars</span></a>
+                        <a href="#"><span class="material-symbols-outlined">settings</span></a>
+                    </ul>
+                    <div class="teacher-only" style="gap: 5px;">
+                        <a href="../index.html"><span class="material-symbols-outlined">home</span></a>
+                        <a href="../Admin/attendance.html"><span class="material-symbols-outlined">assignment</span></a>
+                        <a href="../Admin/analysis.html"><span class="material-symbols-outlined">analytics</span></a>
+                    </div>
+                </div>
+                <span class="menu material-symbols-outlined">menu</span>
+                <a href="#" id="themeToggle" class="dark"><span class="material-symbols-outlined">dark_mode</span></a>
+                <a href="#" aria-placeholder="user">
+                    <div class="userProfile">
+                        <img src="/Public/Assets/AKASH00.jpg" alt="Profile" onclick="toggleMenu()">
+                        <div class="userMenu" id="profileMenu">
+                            <a href="#" class="goProfileLink"><span class="material-symbols-outlined">account_circle</span>View Profile</a>
+                            <a href="/settings"><span class="material-symbols-outlined">settings</span>Settings</a>
+                            <a href="/logout" class="logout-btn"><span class="material-symbols-outlined">logout</span>Logout</a>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </nav>
+    </header>
+    <div id="navbar">
+        <span class="close material-symbols-outlined">close</span>
+            <ul class="student-only">
+                <a href="../index.html"><li><span class="material-symbols-outlined">dashboard</span>Dashboard</li></a>
+                <a href="#"><li><span class="material-symbols-outlined">info</span>Infomation</li></a>
+                <a href="#" id="themeToggle" class="dark"><li><span class="material-symbols-outlined">dark_mode</span>Dark/Light</li></a>
+                <a href="/logout" class="logout-btn"><span class="material-symbols-outlined">logout</span>Logout</a>
+            </ul>
+            <ul class="teacher-only">
+                <a href="#"><li><span class="material-symbols-outlined">dashboard</span>Dashboard</a>
+                <a href="#"><li><span class="material-symbols-outlined">pageview</span>View Students</a>
+                <a href="#"><li><span class="material-symbols-outlined">bar_chart_4_bars</span>Analytics</a>
+                <a href="#"><li><span class="material-symbols-outlined">settings</span>Setting</a>
+                <a href="#"><li><span class="material-symbols-outlined">dark_mode</span>Dark\Light</a>
+                <li> <a href="/logout" class="logout-btn"><span class="material-symbols-outlined">logout</span>Logout</a></li>
+            </ul>
+            <ul class="admin-only">
+                <li><a href="./profile.html"><span class="material-symbols-outlined">dashboard</span><span>Dashboard</span></a></li>
+                <li><a href="./user-list.html"><span class="material-symbols-outlined">pageview</span><span>View Students</span></a></li>
+                <li><a href="./registration.html"><span class="material-symbols-outlined">person_add</span><span>Add Student</span></a></li>
+                <li><a href="#"><span class="material-symbols-outlined">bar_chart_4_bars</span><span>Analytics</span></a></li>
+                <li><a href="#"><span class="material-symbols-outlined">settings</span><span>Settings</span></a></li>
+                <li><a href="#" id="themeToggle" class="dark"><span class="material-symbols-outlined">dark_mode</span><span>Dark/Light</span></a></li>
+                <a href="/logout" class="logout-btn"><span class="material-symbols-outlined">logout</span>Logout</a>
+            </ul>
+    </div>
+
+    <div id="AtteindanceContainer">
+        <h1>Student Attendance</h1>
+        <label for="attendanceDate">Select Date:</label>
+        <input type="date" id="attendanceDate" onchange="checkDate()">
+        
+        <div class="form-section">
+            <div>
+                <label for="courseSelect">Course:</label>
+                <select id="courseSelect" onchange="filterStudentsByCourse()">
+                    <option value="">All</option>
+                    <option value="CSE">CSE</option>
+                    <option value="BCA">BCA</option>
+                    <option value="B.Tech">B.Tech</option>
+                </select>
+            </div>
+            <div id="searchStudentContainer">
+                <label for="searchStudent">Search Student:</label>
+                <input type="text" id="searchStudent" onkeyup="filterStudents()" placeholder="Search by name...">
+            </div>
+        </div>
+
+        <table id="attendanceTable">
+            <thead>
+                <tr>
+                    <th>S.No.</th>
+                    <!-- <th>Profile Photo</th> -->
+                    <th>Student ID</th>
+                    <th>Student Name</th>
+                    <th>Email</th>
+                    <th>Course</th>
+                    <th>Attendance</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        
+        <button id="submitBtn" onclick="confirmAttendance()">Confirm Attendance</button>
+    </div>
+    <script src="../script//global.js"></script>
+    <script src="../script/attendance.js"></script>
+</body>
+</html>

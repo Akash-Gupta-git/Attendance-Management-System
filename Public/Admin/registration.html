@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
+    <script src="https://kit.fontawesome.com/fcdfbe2133.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/Global.css">  
+    <link rel="stylesheet" href="../css/main.css">
+    <title>Registation</title>
+</head>
+<body>
+    <div id="notification-container"></div>
+
+    <header>
+        <nav>
+            <div id="menuIcon">
+                <div class="logo">
+                    <img src="../Assets/AMS_logo.png" alt="Logo">
+                </div>
+                <h1>AMS</h1> 
+            </div>
+            <div id="userOpen">
+                <div class="windowNav">
+                    
+                    <ul class="teacher-only" style="gap: 5px;">
+                        <a href="../index.html"><span class="material-symbols-outlined">home</span></a>
+                        <a href="../Admin/attendance.html"><span class="material-symbols-outlined">assignment</span></a>
+                        <a href="./registration.html"><span class="material-symbols-outlined">person_add</span></a>
+                        <a href="./user-list.html"><span class="material-symbols-outlined">pageview</span></a>
+                        <a href="../Admin/analysis.html"><span class="material-symbols-outlined">analytics</span></a>
+                        <a href="#" class="infograph"><span class="material-symbols-outlined">info</span></a>
+                        <a href="#"><span class="material-symbols-outlined">settings</span></a>
+                        
+                    </ul>
+                   
+                    <div class="admin-only" style="gap: 5px;">
+                        <a href="./analysis.html"><span class="material-symbols-outlined">home</span></a>
+                        <a href="../Admin/attendance.html"><span class="material-symbols-outlined">assignment</span></a>
+                        <a href="./registration.html"><span class="material-symbols-outlined">person_add</span></a>
+                        <a href="./user-list.html"><span class="material-symbols-outlined">pageview</span></a>
+                        <a href="./analysis.html"><span class="material-symbols-outlined">bar_chart_4_bars</span></a>
+                        <a href="#"><span class="material-symbols-outlined">settings</span></a>
+                        
+                    </div>
+                </div>
+                <span class="menu material-symbols-outlined">menu</span>
+                <!-- <a href="#"><span class="notifications material-symbols-outlined">notifications</span></a> -->
+                <a href="#" id="themeToggle" class="dark"><span class="material-symbols-outlined">dark_mode</span></a>
+                <a href="#" aria-placeholder="user">
+                    <div class="userProfile">
+                        <img src="../Assets/AKASH00.jpg" alt="Profile" onclick="toggleMenu()">
+                        <div class="userMenu" id="profileMenu">
+                            <a href="./profile.html" class="goProfileLink"><span class="material-symbols-outlined">account_circle</span>View Profile</a>
+                            <a href="/settings"><span class="material-symbols-outlined">settings</span>Settings</a>
+                            <a href="/logout"><span class="material-symbols-outlined">logout</span>Logout</a>
+                        </div>
+                    </div>
+                </a>
+                
+            </div>
+        </nav>
+    </header>
+    <div id="navbar">
+        <h4>Dashboard</h4>
+        <span class="close material-symbols-outlined">close</span>
+        <ul>
+            <li><a href="./profile.html"><span class="material-symbols-outlined">dashboard</span><span>Dashboard</span></a></li>
+            <li><a href="./user-list.html"><span class="material-symbols-outlined">pageview</span><span>View Students</span></a></li>
+            <li><a href="./registration.html"><span class="material-symbols-outlined">person_add</span><span>Add Student</span></a></li>
+            <li><a href="../Admin/attendance.html"><span class="material-symbols-outlined">assignment</span></a></li>
+            <li><a href="#"><span class="material-symbols-outlined">bar_chart_4_bars</span><span>Analytics</span></a></li>
+            <li><a href="#"><span class="material-symbols-outlined">settings</span><span>Settings</span></a></li>
+            <li><a href="#" id="themeToggle" class="dark"><span class="material-symbols-outlined">dark_mode</span><span>Dark/Light</span></a></li>
+            <li>  <a href="/logout" class="logout-btn"><span class="material-symbols-outlined">logout</span>Logout</a></li>
+        </ul>
+    </div>  
+
+        <main>
+          
+            <div id="registration">
+                <div id="notification-container" style="display: none;"></div>
+
+                <div id="ImportantInfo">
+                    <h2>Important Instructions</h2>
+                    <ol>
+                        <li> Name and other details entered by the applicant need to be the same as in the <span>Educational Documents</span></li>
+                        <li>Applicant can log in to the admission portal through their <span>registered email address, only.</span> </li>
+                        <li>Applicant must use his own <span>active</span> email address.</li>
+                        <li>The Email address provided by the applicant must be functional and the applicant must have access to it throughout the admission process.</li>
+                        <li>Applicants are encouraged to use latest version of <span>Google Chrome</span> web browser for filling the application form.</li>
+                      </ol>
+                </div>
+                <form id="new-account" method="post">
+                    <h3>Create a new account</h3>
+                    <div id="newAccountContainer">
+        
+                        <label for="username">UserName (Used for login)*:</label>
+                        <p class="nameError"></p>
+                        <input type="text" id="username" name="username" autocomplete="username">
+                     
+
+                        <label for="full-name">Applicant's Full Name (As per Educational Documents)*:</label>
+                        <input type="text" id="full-name" autocomplete="name" name="full-name" required>
+
+                        <label for="mobile-number">Mobile Number*:</label>
+                        <p class="mobileNoError"></p>
+                        <input type="tel" id="mobile-number" name="mobile-number" autocomplete="mobile" maxlength="10" required>
+                        
+                        <label for="confirm-mobile-number">Re-Enter Mobile Number*:</label>
+                        <input type="tel" id="confirm-mobile-number" name="confirm-mobile-number" autocomplete="mobile" maxlength="10">
+
+
+                        <label for="email">Applicant's Email Address (Please use your own email as this will be used for all official communication)*:</label>
+                        <input type="email" id="email" name="email" autocomplete="email" required>
+                        
+                        <label for="confirm-email">Re-Enter Applicant's Email Address*:</label>
+                        <p class="mailError"></p>
+                        <input type="email" id="confirm-email" autocomplete="email" name="confirm-email">
+
+                        <label for="password">Password (Minimum 6 characters)*:</label>
+                        <input type="password" id="password" name="password" maxlength="12" required>
+                        
+                        <label for="confirm-password">Re-Enter Password*:</label>
+                        <p class="pswdError"></p>
+                        <input type="password" id="confirm-password" name="confirm-password" maxlength="12" required>
+                        
+                        <div>
+                            <label for="course">Course:</label>
+                            <select id="course" >
+                                <option value="" selected>Select Course</option>
+                                <option value="BCS">BCS</option>
+                                <option value="BCA">BCA</option>
+                                <option value="CSE">CSE</option>
+                                <option value="B.Com">B.Com</option>
+                                <option value="B.tech">B.tech</option>
+                                <option value="MCA">MCA</option>
+                                <option value="M.Com">M.Com</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="userType">User Type:</label>
+                            <select id="userType" required>
+                                <option value="" selected>Select User Type</option>
+                                <option value="teacher">Teacher</option>
+                                <option value="student">Student</option>
+                                <option value="student">Admin</option>
+                            </select>
+                        </div>
+                        
+                        <div class="captcha-container">
+                            <label for="captcha"></label>
+                            <img src="/admin/assets/captcha-image.png" alt="Captcha" class="captcha-image">
+                            <div id="captchaBox">
+                                <div class="regenerateCaptchaBtn" >
+                                    <p class="captchaaa">423253</p>
+                                    <span class="refreshCaptcha material-symbols-outlined">refresh</span>
+                                </div>
+                                <input type="text" id="captcha" name="captcha" maxlength="6">
+                            </div>
+                                        
+                            <p class="about">People who use our service may have uploaded your contact information to Instagram. <a href="">Learn More</a></p>
+                            <P class="about">By signing up, you agree to our Terms , Privacy Policy and Cookies Policy .</P>
+                            <input type="submit"  id="submit-btn" value="Submit">
+                            <!-- <p onclick="forLogin()" id="forLogin">Have you an account? <a href="login.html">Log in</a></p> -->
+                        </div>
+        
+                </form>    
+            </div>
+
+        </main>
+        <footer>
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h4>About Us</h4>
+                    <p>Learn more about our company and mission.</p>
+                    <p>Developed by<Span> Akash Gupta</Span></p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a>
+                    <a href="https://www.twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/in/akash-gupta-718363296/" target="_blank"><i class="fa fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© Nov 2024 Your Company. All rights reserved.</p>
+            </div>
+        </footer>
+
+
+
+
+
+        <script src="../script/global.js"></script>
+    <script src="../script/reg.js"></script>
+</body>
+</html>

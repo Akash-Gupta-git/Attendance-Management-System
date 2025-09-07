@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="../css/global.css">
+     <link rel="stylesheet" href="../css/main.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <script src="https://kit.fontawesome.com/fcdfbe2133.js" crossorigin="anonymous"></script>
+    <title>Dashoard</title>
+</head>
+<body>
+    
+    <header>
+        <nav>
+            <div id="menuIcon">
+                <div class="logo">
+                    <img src="../Assets/AMS_logo.png" alt="Logo">
+                </div>
+                <h1>AMS</h1> 
+            </div>
+            <div id="userOpen">
+                <div class="windowNav">
+                    <div class="admin-only" style="gap: 5px;">
+                        <a href="./analysis.html"><span class="material-symbols-outlined">home</span></a>
+                        <a href="../Admin/attendance.html"><span class="material-symbols-outlined">assignment</span></a>
+                        <a href="./registration.html"><span class="material-symbols-outlined">person_add</span></a>
+                        <a href="./user-list.html"><span class="material-symbols-outlined">pageview</span></a>
+                        <a href="#"><span class="material-symbols-outlined">bar_chart_4_bars</span></a>
+                        <a href="#"><span class="material-symbols-outlined">settings</span></a>
+                    </div>
+                    <div class="teacher-only" style="gap: 5px;">
+                        <a href="../index.html"><span class="material-symbols-outlined">home</span></a>
+                        <a href="../Admin/attendance.html"><span class="material-symbols-outlined">assignment</span></a>
+                        <a href="../Admin/analysis.html"><span class="material-symbols-outlined">analytics</span></a>
+                    </div>
+                </div>
+                <span class="menu material-symbols-outlined">menu</span>
+                <!-- <a href="#"><span class="notifications material-symbols-outlined">notifications</span></a> -->
+                <a href="#" id="themeToggle" class="dark"><span class="material-symbols-outlined">dark_mode</span></a>
+                <a href="#" aria-placeholder="user">
+                    <div class="userProfile">
+                        <img src="../Assets/AKASH00.jpg" alt="Profile" onclick="toggleMenu()">
+                        <div class="userMenu" id="profileMenu">
+                            <a href="./profile.html" class="goProfileLink"><span class="material-symbols-outlined">account_circle</span>View Profile</a>
+                            <a href="/settings"><span class="material-symbols-outlined">settings</span>Settings</a>
+                            <a href="/logout"><span class="material-symbols-outlined">logout</span>Logout</a>
+                        </div>
+                    </div>
+                </a>
+                
+            </div>
+        </nav>
+    </header>
+    <div id="navbar">
+        <h4>Dashboard</h4>
+        <span class="close material-symbols-outlined">close</span>
+        
+        <ul class="student-only">
+            <a href="../index.html"><li><span class="material-symbols-outlined">dashboard</span>Dashboard</li></a>
+            <a href="#"><li><span class="material-symbols-outlined">info</span>Infomation</li></a>
+            <a href="#" id="themeToggle" class="dark"><li><span class="material-symbols-outlined">dark_mode</span>Dark/Light</li></a>
+            <a href="#"><li><span class="logout-btn material-symbols-outlined">logout</span>Log Out</li></a>
+        </ul>
+        <ul class="teacher-only">
+            <a href="#"><li><span class="material-symbols-outlined">dashboard</span>Dashboard</li></a>
+            <a href="#"><li><span class="material-symbols-outlined">pageview</span>View Students</li></a>  
+            <a href="#"><li><span class="material-symbols-outlined">bar_chart_4_bars</span>Analytics</li></a>
+            <a href="#"><li><span class="material-symbols-outlined">settings</span>Setting</li></a>
+            <a href="#"><li><span class="material-symbols-outlined">dark_mode</span>Dark\Light</li></a>
+            <a href="/logout" class="logout-btn"><span class="material-symbols-outlined">logout</span>Logout</a>
+        </ul>
+        <ul class="admin-only">
+            <a href="./profile.html"><span class="material-symbols-outlined">dashboard</span><span>Dashboard</span></a>
+            <a href="./user-list.html"><span class="material-symbols-outlined">pageview</span><span>View Students</span></a>
+            <a href="./registration.html"><span class="material-symbols-outlined">person_add</span><span>Add Student</span></a>
+            <a href="#"><span class="material-symbols-outlined">bar_chart_4_bars</span><span>Analytics</span></a>
+            <a href="#"><span class="material-symbols-outlined">settings</span><span>Settings</span></a>
+            <a href="#" id="themeToggle" class="dark"><span class="material-symbols-outlined">dark_mode</span><span>Dark/Light</span></a>
+            <a href="/logout" class="logout-btn"><span class="material-symbols-outlined">logout</span>Logout</a>
+            
+       </ul>
+    </div>  
+
+
+        <main>
+            <div id="analysisContainer">
+                <h1>Analysis</h1>
+                <div id="Container0">
+                    <ul>
+                        <li><a href="#">Analystics</a></li>
+                        <!-- <li><a href="#">Content</a></li> -->
+                    </ul>
+                    <div class="analysis-Container-Box">
+                        <div class="card card1">
+                            <div class="card-text">
+                                <h2>4000143</h2>
+                                <p>Registered Students</p>
+                                <a href="#" class="more-info">More info &#9432;</a>
+                            </div>
+                            <span class="icon">&#127968;</span>
+                        </div>
+                        
+                        <div class="card card2">
+                            <div class="card-text">
+                                <h2>167008</h2>
+                                <p>Registered Students</p>
+                                <a href="#" class="more-info">More info &#9432;</a>
+                            </div>
+                            <span class="icon">&#128101;</span>
+                        </div>
+
+                        <div class="card card3">
+                            <div class="card-text">
+                                <h2>41955</h2>
+                                <p>Present Today</p>
+                                <a href="#" class="more-info">More info &#9432;</a>
+                            </div>
+                            <span class="icon">&#128100;</span>
+                        </div>
+                        
+                        <div class="card card4">
+                            <div class="card-text">
+                                <h2>45015</h2>
+                                <p>Devices Active Today</p>
+                                <a href="#" class="more-info">More info &#9432;</a>
+                            </div>
+                            <span class="icon">&#128187;</span>
+                        </div>
+                    </div>
+
+                    <!-- ======cards close======================== -->
+                </div>
+               
+
+            </div>
+         
+
+        </main>
+
+        <footer>
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h4>About Us</h4>
+                    <p>Learn more about our company and mission.</p>
+                    <p>Developed by<Span> Akash Gupta</Span></p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a>
+                    <a href="https://www.twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/in/akash-gupta-718363296/" target="_blank"><i class="fa fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© Nov 2024 Your Company. All rights reserved.</p>
+            </div>
+        </footer>
+    
+        <script src="../script/global.js"></script>
+        
+        
+</body>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+
+    <script src="https://kit.fontawesome.com/fcdfbe2133.js" crossorigin="anonymous"></script>
+     <link rel="stylesheet" href="../css/main.css">
+     <link rel="stylesheet" href="../css/Global.css">
+    <title>User Profile</title>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div id="menuIcon">
+                <div class="logo">
+                    <img src="../Assets/AMS_logo.png" alt="Logo">
+                </div>
+                <h1>AMS</h1> 
+            </div>
+            <div id="userOpen">
+                <div class="windowNav">
+                    <div class="student-only" style="gap: 5px;">
+                        <a href="../index.html"><span class="material-symbols-outlined">home</span></a>
+                        <a href="#"><span class="material-symbols-outlined">info</span></a>
+                    </div>
+                    <div class="teacher-only" style="gap: 5px;">
+                        <a href="../index.html"><span class="material-symbols-outlined">home</span></a>
+                        <a href="../Admin/attendance.html"><span class="material-symbols-outlined">assignment</span></a>
+                        <a href="../Admin/analysis.html"><span class="material-symbols-outlined">analytics</span></a>
+                    </div>
+                    <div class="admin-only" style="gap: 5px;">
+                        <a href="../index.html"><span class="material-symbols-outlined">home</span></a>
+                        <a href="../Admin/attendance.html"><span class="material-symbols-outlined">assignment</span></a>
+                        <a href="../Admin/registration.html"><span class="material-symbols-outlined">person_add</span></a>
+                        <a href="../Admin/user-list.html"><span class="material-symbols-outlined">pageview</span></a>
+                        <a href="#"><span class="material-symbols-outlined">bar_chart_4_bars</span></a>
+                        <a href="#"><span class="material-symbols-outlined">settings</span></a>
+                        
+                    </div>
+                </div>
+           
+            
+                <span class="menu material-symbols-outlined">menu</span>
+                <a href="#" id="themeToggle" class="dark"><span class="material-symbols-outlined">dark_mode</span></a>
+                <a aria-placeholder="user">
+                    <div class="userProfile">
+                        <img src="../Assets/AKASH00.jpg" alt="Profile" onclick="toggleMenu()">
+                        <div class="userMenu" id="profileMenu">
+                            <a href="#"><span class="material-symbols-outlined">account_circle</span>View Profile</a>
+                            <a href="/setting features not available"><span class="material-symbols-outlined">settings</span>Settings</a>
+                            <a href="/logout" class="logout-btn"><span class="material-symbols-outlined">logout</span>Logout</a>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </nav>
+    </header>
+    <div id="navbar">
+        <span class="close material-symbols-outlined">close</span>
+            <ul class="student-only">
+                <a href="../index.html"><li><span class="material-symbols-outlined">dashboard</span>Dashboard</li></a>
+                <a href="#"><li><span class="material-symbols-outlined">info</span>Infomation</li></a>
+                <a href="#" id="themeToggle" class="dark"><li><span class="material-symbols-outlined">dark_mode</span>Dark/Light</li></a>
+                <a href="#"><li><span class="logout-btn material-symbols-outlined">logout</span>Log Out</li></a>
+            </ul>
+            <ul class="teacher-only">
+                <a href="#"><li><span class="material-symbols-outlined">dashboard</span>Dashboard</a>
+                <a href="#"><li><span class="material-symbols-outlined">pageview</span>View Students</a>
+                <a href="#"><li><span class="material-symbols-outlined">bar_chart_4_bars</span>Analytics</a>
+               <a href="#"><li><span class="material-symbols-outlined">settings</span>Setting</a>
+                <a href="#"><li><span class="material-symbols-outlined">dark_mode</span>Dark\Light</a>
+                <li> <a href="/logout" class="logout-btn"><span class="material-symbols-outlined">logout</span>Logout</a></li>
+            </ul>
+            <ul class="admin-only">
+                <li><a href="./profile.html"><span class="material-symbols-outlined">dashboard</span><span>Dashboard</span></a></li>
+                <li><a href="./user-list.html"><span class="material-symbols-outlined">pageview</span><span>View Students</span></a></li>
+                <li><a href="./registration.html"><span class="material-symbols-outlined">person_add</span><span>Add Student</span></a></li>
+                <li><a href="#"><span class="material-symbols-outlined">bar_chart_4_bars</span><span>Analytics</span></a></li>
+                <li><a href="#"><span class="material-symbols-outlined">settings</span><span>Settings</span></a></li>
+                <li><a href="#" id="themeToggle" class="dark"><span class="material-symbols-outlined">dark_mode</span><span>Dark/Light</span></a></li>
+                <li> <a href="/logout" class="logout-btn"><span class="material-symbols-outlined">logout</span>Logout</a></li>
+           </ul>
+    </div>
+
+    <main>
+        <div id="profileContainer">
+            <span class="edit admin-only material-symbols-outlined">edit</span>
+            <div id="StduentProfileDetails">
+                <div id="image">
+                    <img id="user_photo" src="../Assets/AKASH00.jpg" alt="Profile Picture">
+                    <h1 id="username">XXXXName</h1>
+                </div>
+                <div id="card-container-container">
+                    <h1 id="collageName">Indira Gandhi National Open University</h1>
+                    <div id="card-container">
+                        <div class="card card1" style="background-color: #e64a19;">
+                           <span>
+                               <h2>4</h2>
+                               <p>Enrolled Courses</p>
+                            </span>
+                            <span class="icon">&#128101;</span>
+                        </div>
+                        <div class="card card2" style="background-color: rgb(88, 88, 248);">
+                            <span>
+                                <h2>75%</h2>
+                                <p>Attendance Percentage</p>
+                            </span>
+                            <span class="icon">&#128101;</span>
+                        </div>
+                        <div class="card card3" style="background-color: #FF8C00;">
+                            <span>
+                                <h2>108</h2>
+                                <p>Attendance</p>
+                            </span>
+                            <span class="icon">&#128101;</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="StudentPersonalDetails">
+                <details>
+                    <summary  class="user-role">Student Personal Information</summary>
+                    <div class="studentDetails">
+                        <div class="detail">
+                            <span class="label"><strong>Student's Name:</strong></span>
+                            <span class="value" id="full_name">RaXXXar</span>
+                        </div>
+                        <div class="detail">
+                            <span class="label"><strong>Father's Name:</strong></span>
+                            <span class="value" id="fName">XXamXXXmar</span>
+                        </div>
+                        <div class="detail">
+                            <span class="label"><strong>Email:</strong></span>
+                            <span class="value" id="email">rajXXX@example.com</span>
+                        </div>
+                        <div class="detail">
+                           <span><strong>Mobile:</strong></span><span id="mobile_no">+91 9XXXXXXX10</span>
+                        </div>
+                        <div class="detail">
+                            <span><strong>Address:</strong></span><span id="address">123 Main Street, City, Country </span>
+                        </div>
+                        <div class="detail">
+                            <span class="label"><strong>Enrollment no:</strong></span>
+                            <span class="value" id="enroll_no" >2X10</span>
+                        </div>
+                    </div>
+                </details>
+                
+                <details>
+                    <summary  class="user-role">Student Academic Information</summary>
+                    <div class="studentDetails">
+                        <div class="detail">
+                            <span class="label"><strong>Course:</strong></span>
+                            <span class="value" id="course">CompXXXXXnce</span>
+                        </div>
+                       
+                        <div class="detail">
+                            <span class="label"><strong>student ID:</strong></span>
+                            <span class="value" id="Vid">22XXXXXXX3</span>
+                        </div>
+                        <div class="detail">
+                            <span class="label"><strong>12th marks</strong></span>
+                            <span class="value" id="grade12">X.5</span>
+                        </div>
+                        <div class="detail">
+                            <span class="label"><strong>10th marks:</strong></span>
+                            <span class="value" id="grade10">X.5</span>
+                        </div>
+                    </div>
+                </details>
+              
+            </div>
+        </div>
+       
+    </main>
+
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>About Us</h4>
+                <p>Learn more about our company and mission.</p>
+                <p>Developed by<Span> Akash Gupta</Span></p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a>
+                <a href="https://www.twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/" target="_blank"><i class="fa fa-linkedin"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© Nov 2024 Your Company. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+
+
+
+   
+
+    <script src="../script/global.js"></script>
+    <script src="../script/profile.js"></script>
+</body>
+</html>

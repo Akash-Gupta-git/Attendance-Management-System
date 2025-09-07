@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Profile</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    
+</head>
+<body>
+    <div id="profile-admin-container">
+
+            <div class="profile-container">
+                <h1>Admin Profile</h1>
+                
+                <div class="profile-photo">
+                    <img id="profilePhoto" src="" alt="Profile Photo" />
+                </div>
+
+                
+                <div class="profile-item">
+                    <strong>Name:</strong>
+                    <span id="name"></span>
+                </div>
+                <div class="profile-item">
+                    <strong>Email:</strong>
+                    <span id="email"></span>
+                </div>
+                <div class="profile-item">
+                    <strong>Verified:</strong>
+                    <span id="course"></span>
+                </div>
+
+                <a href="./user-list.html" class="back-btn">⬅️ Back to Home </a>
+                <a href="/logout" class="logout-btn">⬅️ Log out </a>
+            </div>
+    </div>
+<script>
+// profile.js - Frontend (Client-Side)
+document.addEventListener("DOMContentLoaded", async () => {
+    const token = localStorage.getItem("token");
+    
+    const logoutButtons = document.querySelectorAll(".logout-btn");
+
+    if (logoutButtons.length > 0) {
+        logoutButtons.forEach(button => {
+            button.addEventListener("click", function () {
+                logoutUser();
+            });
+        });
+    } else {
+        console.error("❌ No logout buttons found!");
+    }
+
+    function logoutUser() {
+        console.log("🔄 Logging out...");
+
+        const token = localStorage.getItem("token");
+        if (!token) {
+            window.location.href = "signin.html";
+            return;
+        }
+
+        fetch("http://localhost:3000/api/auth/logout", {
+            method: "POST",
+            headers: { "Authorization": `Bearer ${token}` }
+        })
+        .then(response => response.json())
+        .then(() => {
+            localStorage.removeItem("token");
+            localStorage.removeItem("userType");
+            console.log("✅ User logged out successfully.");
+            window.location.href = "../Login/signin.html";
+        })
+        .catch(error => console.error("❌ Logout Error:", error));
+    }
+
+    try {
+        const urlParams = new URLSearchParams(window.location.search );
+        const username = urlParams.get("username");
+        const Vid = urlParams.get("Vid");
+
+        const token = localStorage.getItem("token");
+        const currentPage = window.location.pathname;
+      
+        if (!token) {
+            if (!currentPage.includes("signin.html")) {
+                console.warn("🔄 Redirecting to signin...");
+                alert("🔄 Redirecting to signin...");
+                window.location.href = "../Login/signin.html";
+            }
+            throw new Error("❌ Authentication token is missing!");
+        }
+       
+        let apiUrl = "http://localhost:3000/admin_profile";
+
+        // ✅ Add query parameters if available
+        if (username && Vid) {
+            apiUrl += `?username=${encodeURIComponent(username)}&Vid=${encodeURIComponent(Vid)}`;
+        }
+
+        // ✅ Fetch user data from backend
+        const response = await fetch(apiUrl, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${token}` 
+            }
+        });
+        const data = await response.json();  
+        // console.log("data dekho na ", data, data.user, data,username);
+              
+ 
+      
+        // const response = await fetch(`http://localhost:3000/api/admin_profile?username=${userName}&Vid=${Vid}`);
+        
+        if (!response.ok) {
+            throw new Error(data.error || "❌ Error fetching profile data");
+        }
+
+        
+        document.getElementById("name").textContent = data.user.username;
+        document.getElementById("email").textContent = data.user.email;
+        document.getElementById("course").textContent = data.user.verified ? "No" : "Yes";
+        document.getElementById("profilePhoto").src = data.user.user_photo || "../Assets/AKASH00.jpg";
+    } catch (error) {
+        console.error("❌ Profile data fetch error:", error);
+    }
+});
+
+// Logout Function
+document.getElementById("logoutBtn")?.addEventListener("click", () => {
+    fetch("/api/logout", { method: "POST" })
+        .then(() => {
+            localStorage.clear();
+            window.location.href = "/login.html";
+        })
+        .catch(err => console.error("❌ Logout error:", err));
+});
+
+
+    </script>
+    
+</body>
+</html>
